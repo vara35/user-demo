@@ -6,7 +6,9 @@ const sqlite3 = require("sqlite3");
 const app = express();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const cors = require("cors");
 app.use(express.json());
+app.use(cors());
 
 const dbPath = path.join(__dirname, "userData.db");
 
