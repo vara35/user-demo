@@ -80,7 +80,8 @@ app.post("/users/", async (request, response) => {
 });
 
 app.post("/login", async (request, response) => {
-  const { username, password } = request.body;
+  const { userdetails } = request.body;
+  const { username, password } = userdetails;
   const selectUserQuery = `SELECT * FROM user WHERE username = '${username}'`;
   const dbUser = await db.get(selectUserQuery);
   if (dbUser === undefined) {
